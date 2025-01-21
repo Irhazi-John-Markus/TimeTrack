@@ -14,6 +14,10 @@ export class UserComponent {
   selectedUser = DUMMY_USERS[randomIndex];
 
   get imagePath() {
-    return 'public/users/' + this.selectedUser.avatar
+    return '../' + this.selectedUser.avatar
+  }
+
+  onSelectUser() {
+    console.log('clicked');
   }
 }
