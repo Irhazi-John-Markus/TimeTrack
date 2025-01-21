@@ -14,7 +14,7 @@ export class UserComponent {
   selectedUser = DUMMY_USERS[randomIndex];
 
   get imagePath() {
-    return '../' + this.selectedUser.avatar
+    return '/first-angular-app/public/users' + this.selectedUser.avatar
   }
 
   onSelectUser() {
