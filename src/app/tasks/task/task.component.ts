@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {DatePipe} from '@angular/common';
 
-import { type Task } from './task.model';
+import { Task } from './task.model';
 import { CardComponent } from "../../shared/card/card.component";
 
 
@@ -14,6 +14,7 @@ import { CardComponent } from "../../shared/card/card.component";
 export class TaskComponent {
   @Input({required:true}) task!:Task;
   @Output () complete =new EventEmitter<string>();
+  user: any;
 
   onCompleteTask() {
     this.complete.emit(this.user.id);

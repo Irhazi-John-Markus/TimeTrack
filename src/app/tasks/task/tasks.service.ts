@@ -27,6 +27,7 @@ import { type NewTaskData } from "../new-task/new-task.model";
           dueDate: '2025-15-31'
         },
       ];
+  userId!: string;
 
       constructer (){
         const tasks = localStorage.getItem('tasks');
