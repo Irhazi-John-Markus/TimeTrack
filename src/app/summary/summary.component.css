@@ -1,6 +1,7 @@
 .summary {
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.1); 
+  background: rgb(1,42,91);
+  background: linear-gradient(90deg, rgba(1,42,91,1) 11%, rgba(8,60,121,1) 43%, rgba(12,121,143,1) 72%, rgba(12,153,190,1) 91%);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
