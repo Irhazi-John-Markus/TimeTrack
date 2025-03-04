@@ -1,0 +1,137 @@
+.vacation-summary {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9); 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.vacation-summary h2, .vacation-summary h3 {
+  margin-top: 0;
+  color: #333; 
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.vacation-summary p {
+  margin: 0.5rem 0;
+  color: #555; 
+  font-size: 1.2rem;
+}
+
+.date-filter {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mat-form-field {
+  width: 100%;
+  max-width: 250px;
+}
+
+.progress-bar {
+  margin-top: 1rem;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #d1cfcf;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #3fb562; 
+  transition: width 0.3s ease;
+}
+
+.mat-progress-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  animation: progress-bar-stripes 1s linear infinite;
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 40px 0;
+  }
+}
+
+.mat-form-field .mat-form-field-wrapper {
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease;
+}
+
+.mat-form-field .mat-form-field-wrapper:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mat-form-field .mat-form-field-wrapper.mat-focused {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mat-form-field .mat-form-field-label {
+  color: #333;
+}
+
+.mat-form-field .mat-input-element {
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.mat-form-field .mat-input-element:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3f51b5;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color:lightskyblue;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+  }
+  
+  button:active {
+    transform: translateY(-1px);
+  }
+
+  table {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .mat-button {
+    min-width: 36px;
+  }

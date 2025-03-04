@@ -1,0 +1,50 @@
+.summary {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.8); 
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.summary:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.mat-tab-group {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mat-tab-label {
+  font-weight: bold;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.mat-tab-label:hover {
+  color: #ffffff;
+}
+
+.mat-tab-label-active {
+  color: #ffffff;
+}
+
+.mat-tab-body-wrapper {
+  padding: 1rem;
+  background-color: #fafafa; 
+  border-radius: 10px;
+}
+
+.mat-tab-body {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mat-tab-body .mat-tab-body-content {
+  padding: 1rem;
+}

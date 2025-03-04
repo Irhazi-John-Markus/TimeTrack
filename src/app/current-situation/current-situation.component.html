@@ -1,0 +1,7 @@
+<div class="current-situation">
+  <app-search-filter (filterChange)="applyFilter($event)"></app-search-filter>
+  <div class="results">
+    <div *ngFor="let result of results" class="result-item">
+      <p>{{ result.name }} - {{ result.date }} - {{ result.status }}</p>
+    </div>
+</div>

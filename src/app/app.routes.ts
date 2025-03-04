@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component';
-import { SettingsComponent } from './settings/settings.component';
-import { PagesComponent } from './pages/pages.component';
+import { LeaveTicketsComponent } from './leave-tickets/leave-tickets.component';
+import { VacationSummaryComponent } from './vacation-summary/vacation-summary.component';
+import { SummaryComponent } from './summary/summary.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'pages', component: PagesComponent },
+  { path: 'leave-tickets', component: LeaveTicketsComponent },
+  { path: 'vacation', component: VacationSummaryComponent },
+  { path: 'Summary', component: SummaryComponent },
 ];
