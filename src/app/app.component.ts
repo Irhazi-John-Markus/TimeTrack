@@ -1,11 +1,19 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
 import { MainComponent } from './main/main.component';
+import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
+import { TimerComponent } from "./timer/timer.component";
+import { HourglassComponent } from "./hourglass/hourglass.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LeftSidebarComponent, MainComponent],
+  imports: [
+    LeftSidebarComponent,
+    MainComponent,
+    ProgressBarComponent,
+    TimerComponent,
+    HourglassComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

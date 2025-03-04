@@ -16,23 +16,23 @@ export class LeftSidebarComponent {
   items = [
     {
       routeLink: 'dashboard',
-      icon: 'fal fa-home',
+      icon: 'fal fa-tachometer-alt',
       label: 'Dashboard',
     },
     {
-      routeLink: 'products',
-      icon: 'fal fa-box-open',
-      label: 'Products',
+      routeLink: 'leave-tickets',
+      icon: 'fal fa-ticket-alt',
+      label: 'Leave Tickets',
     },
     {
-      routeLink: 'pages',
-      icon: 'fal fa-file',
-      label: 'Pages',
+      routeLink: 'vacation',
+      icon: 'fal fa-calendar-alt',
+      label: 'Calendar',
     },
     {
-      routeLink: 'settings',
-      icon: 'fal fa-cog',
-      label: 'Settings',
+      routeLink: 'Summary',
+      icon: 'fal fa-chart-bar',
+      label: 'Summary',
     },
   ];
   trackByFn!: TrackByFunction<{ routeLink: string; icon: string; label: string; }>;

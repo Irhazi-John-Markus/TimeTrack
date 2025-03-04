@@ -1,0 +1,76 @@
+.content {
+    flex-grow: 1;
+    margin-left: 270px; 
+    padding: 2rem;
+    transition: margin-left 0.3s ease;
+  }
+
+.time-tracker {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .timer-hourglass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  app-progress-bar {
+    flex-shrink: 0;
+    margin-right: 2rem;
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  app-progress-bar:hover {
+    transform: scale(1.05);
+  }
+  
+  app-hourglass {
+    margin-left: 2rem;
+    width: 300px;
+    transition: transform 0.3s ease;
+  }
+  
+  app-hourglass:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .time-tracker {
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+    }
+    
+    app-progress-bar,
+    app-hourglass {
+      margin: 1rem 0;
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+      margin-bottom: 1rem;
+    }
+  
+    .content {
+      margin-left: 0;
+    }
+  }
+  

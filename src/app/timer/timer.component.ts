@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { TimerService } from '../timer/timer.service'
 import { HourglassComponent } from '../hourglass/hourglass.component';
 
 @Component({
@@ -15,19 +14,20 @@ export class TimerComponent implements OnInit {
   elapsedTime: number = 0;
   timerInterval: any;
   progress: number = 0;
-  duration: number = 60; // 60 seconds
+  duration: number = 60; 
   isRunning: boolean = false;
   @Output() timerStarted = new EventEmitter<void>();
   @Output() timerStopped = new EventEmitter<void>();
   @Output() progressChange = new EventEmitter<number>();
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private timerService: TimerService) {}
 
   ngOnInit() {
     const savedTime = localStorage.getItem('elapsedTime');
     if (savedTime) {
       this.elapsedTime = parseInt(savedTime, 10);
       this.progress = (this.elapsedTime / (this.duration * 1000)) * 100;
+      this.timerService.setElapsedTime(this.elapsedTime);
     }
   }
 
@@ -35,10 +35,13 @@ export class TimerComponent implements OnInit {
     if (!this.startTime) {
       this.startTime = Date.now() - this.elapsedTime;
       this.isRunning = true;
+      console.log('Timer started at:', this.startTime);
       this.timerInterval = setInterval(() => {
         this.elapsedTime = Date.now() - this.startTime!;
-        this.progress = (this.elapsedTime / (this.duration * 1000)) * 100; // Progress for 60 seconds
+        this.progress = (this.elapsedTime / (this.duration * 1000)) * 100;
         this.progressChange.emit(this.progress);
+        this.timerService.setElapsedTime(this.elapsedTime);
+        console.log('Elapsed time:', this.elapsedTime);
       }, 1000);
       this.timerStarted.emit();
     }
@@ -54,6 +57,7 @@ export class TimerComponent implements OnInit {
       this.snackBar.open('Time recorded successfully!', 'Close', {
         duration: 3000,
       });
+      this.timerService.setElapsedTime(this.elapsedTime);
     }
   }
 
@@ -66,9 +70,11 @@ export class TimerComponent implements OnInit {
     localStorage.removeItem('elapsedTime');
     this.progressChange.emit(this.progress);
     this.timerStopped.emit();
+    this.timerService.setElapsedTime(this.elapsedTime);
   }
 
   getFormattedTime(): string {
     return (this.elapsedTime / 1000).toFixed(0) + ' seconds';
   }
 }
+
