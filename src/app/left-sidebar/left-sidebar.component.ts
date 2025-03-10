@@ -16,22 +16,22 @@ export class LeftSidebarComponent {
   items = [
     {
       routeLink: 'dashboard',
-      icon: 'fal fa-tachometer-alt',
+      icon: 'dashboard',
       label: 'Dashboard',
     },
     {
       routeLink: 'leave-tickets',
-      icon: 'fal fa-ticket-alt',
+      icon: 'event_note',
       label: 'Leave Tickets',
     },
     {
       routeLink: 'vacation',
-      icon: 'fal fa-calendar-alt',
+      icon: 'beach_access',
       label: 'Calendar',
     },
     {
       routeLink: 'Summary',
-      icon: 'fal fa-chart-bar',
+      icon: 'cloud',
       label: 'Summary',
     },
   ];

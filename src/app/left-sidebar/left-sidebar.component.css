@@ -73,14 +73,15 @@
     transition: all 0.3s ease;
   }
   .sidenav-nav .sidenav-nav-item .sidenav-nav-link .sidenav-link-icon {
-    font-size: 22px;
-    width: 2rem;
-    min-width: 2rem;
+    font-size: 1.5rem;
+    width: 3 rem;
+    min-width: 3rem;
     text-align: center;
-    padding: 12px;
+    padding: 25px;
+    flex-shrink: 0;
   }
   .sidenav-nav .sidenav-nav-item .sidenav-nav-link .sidenav-link-text {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
   }
   .sidenav-nav .sidenav-nav-item:hover .sidenav-nav-link {
     background-color: #fff;

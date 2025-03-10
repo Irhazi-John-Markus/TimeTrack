@@ -1,0 +1,27 @@
+:root {
+    --primary-color:rgb(18, 158, 186) 72%, rgb(15, 179, 220) 91%;
+    --accent-color: #ff4081;
+    --background-color: rgba(18,158,186) 72%, rgba(15,179,220) 91%;
+    --text-color: #000000;
+  }
+  
+  .dark-theme {
+    --primary-color: rgb(4, 64, 137) 11%, rgba(22,80,146) 43%;
+    --accent-color: #ff4081;
+    --background-color: rgba(4,64,137) 11%, rgb(22, 80, 146) 43%;
+    --text-color: #ffffff;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .mat-primary {
+    background-color: var(--primary-color) !important;
+  }
+  
+  .mat-accent {
+    background-color: var(--accent-color) !important;
+  }
+  
