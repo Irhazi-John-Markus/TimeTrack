@@ -4,6 +4,8 @@ import { MainComponent } from './main/main.component';
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { TimerComponent } from "./timer/timer.component";
 import { HourglassComponent } from "./hourglass/hourglass.component";
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +15,37 @@ import { HourglassComponent } from "./hourglass/hourglass.component";
     MainComponent,
     ProgressBarComponent,
     TimerComponent,
-    HourglassComponent],
+    HourglassComponent,
+    MatIconModule,
+    MatButtonModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   isLeftSidebarCollapsed = signal<boolean>(false);
   screenWidth = signal<number>(window.innerWidth);
+  title = 'TimeTrack';
+  isDarkTheme = localStorage.getItem('theme') === 'dark';
+
+  constructor() {
+    this.applyTheme();
+  }
+   
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
+    this.applyTheme();
+  }
+  
+  applyTheme() {
+    if (this.isDarkTheme) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }
+  
 
   @HostListener('window:resize')
   onResize() {
@@ -37,3 +63,5 @@ export class AppComponent implements OnInit {
     this.isLeftSidebarCollapsed.set(isLeftSidebarCollapsed);
   }
 }
+
+

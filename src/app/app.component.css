@@ -19,7 +19,25 @@
     margin: 2rem 0;
     margin-bottom: 1rem;
   }
-  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+
+  button mat-icon {
+    margin-right: 0.75rem;
+    color: black; 
+  }
+  button:hover {
+    background-color: #e0e0e0;
+    transform: translateX(5px);
+  }
+
   .timer-hourglass {
     display: flex;
     flex-direction: column;
