@@ -34,6 +34,11 @@ export class LeftSidebarComponent {
       icon: 'cloud',
       label: 'Summary',
     },
+    {
+      routeLink: 'Search-filter',
+      icon: 'search',
+      label: 'Search-Filter',
+    },
   ];
   trackByFn!: TrackByFunction<{ routeLink: string; icon: string; label: string; }>;
 

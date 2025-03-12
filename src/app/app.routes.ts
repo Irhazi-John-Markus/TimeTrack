@@ -3,6 +3,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LeaveTicketsComponent } from './leave-tickets/leave-tickets.component';
 import { VacationSummaryComponent } from './vacation-summary/vacation-summary.component';
 import { SummaryComponent } from './summary/summary.component';
+import { InteractiveGridComponent } from './interactive-grid/interactive-grid.component';
 
 
 export const routes: Routes = [
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'leave-tickets', component: LeaveTicketsComponent },
   { path: 'vacation', component: VacationSummaryComponent },
   { path: 'Summary', component: SummaryComponent },
+  { path: 'Search-filter', component: InteractiveGridComponent },
 ];
