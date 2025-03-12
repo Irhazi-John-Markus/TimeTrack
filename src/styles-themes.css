@@ -1,14 +1,14 @@
 :root {
-    --primary-color:rgb(18, 158, 186) 72%, rgb(15, 179, 220) 91%;
+    --primary-color: #0fb3dc;
     --accent-color: #ff4081;
-    --background-color: rgba(18,158,186) 72%, rgba(15,179,220) 91%;
+    --background-color: #0fb3dc;
     --text-color: #000000;
   }
   
   .dark-theme {
-    --primary-color: rgb(4, 64, 137) 11%, rgba(22,80,146) 43%;
+    --primary-color: #044089;
     --accent-color: #ff4081;
-    --background-color: rgba(4,64,137) 11%, rgb(22, 80, 146) 43%;
+    --background-color: #044089;
     --text-color: #ffffff;
   }
   
