@@ -4,7 +4,7 @@
     align-items: center;
     padding: 2rem;
     background: rgb(1,42,91);
-    background: linear-gradient(90deg, rgba(1,42,91,1) 11%, rgba(8,60,121,1) 43%, rgba(12,121,143,1) 72%, rgba(12,153,190,1) 91%);
+    background: linear-gradient(90deg, rgba(1,42,91,1) 11%, rgba(8,60,121,1) 43%, rgba(12,121,143,1) 72%, #0c99be 91%);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
