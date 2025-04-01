@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
+import { LeftSidebarComponent } from '../layout/left-sidebar/left-sidebar.component';
 import { MainComponent } from './main/main.component';
 import { HourglassComponent} from './hourglass/hourglass.component';
 import { TimerComponent } from './timer/timer.component';

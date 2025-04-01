@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
-import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
+import { LeftSidebarComponent } from '../layout/left-sidebar/left-sidebar.component';
 import { MainComponent } from './main/main.component';
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { TimerComponent } from "./timer/timer.component";
