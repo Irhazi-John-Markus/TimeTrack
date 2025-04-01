@@ -6,6 +6,7 @@ import { TimerComponent } from "./timer/timer.component";
 import { HourglassComponent } from "./hourglass/hourglass.component";
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { FooterComponent } from "../layout/footer/footer.component";
 
 @Component({
   selector: 'app-root',
@@ -17,8 +18,9 @@ import { MatButtonModule } from '@angular/material/button';
     TimerComponent,
     HourglassComponent,
     MatIconModule,
-    MatButtonModule
-  ],
+    MatButtonModule,
+    FooterComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

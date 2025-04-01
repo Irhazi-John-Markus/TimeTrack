@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { LeftSidebarComponent } from '../layout/left-sidebar/left-sidebar.component';
+import { FooterComponent } from '../layout/footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { HourglassComponent} from './hourglass/hourglass.component';
 import { TimerComponent } from './timer/timer.component';
@@ -27,6 +28,7 @@ import { routes } from './app.routes';
     MatButtonModule,
     MatIconModule,
     LeftSidebarComponent,
+    FooterComponent,
     MainComponent,
     HourglassComponent,
     TimerComponent,

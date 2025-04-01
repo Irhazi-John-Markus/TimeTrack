@@ -8,6 +8,12 @@
   [screenWidth]="screenWidth()"
 />
 
+<app-footer
+[isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+[screenWidth]="screenWidth()"
+ />
+
+<div> 
 <div class="container" [class.dark-theme]="isDarkTheme">
   <button mat-button (click)="toggleTheme()">
     <mat-icon>{{ isDarkTheme ? 'brightness_7' : 'brightness_4' }}</mat-icon>
@@ -26,3 +32,5 @@
       <app-hourglass #hourglass [duration]="60" [isRunning]="timer.isRunning"></app-hourglass>
 
     </div>
+    <div> 
+
