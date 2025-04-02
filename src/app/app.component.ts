@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from "../layout/footer/footer.component";
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

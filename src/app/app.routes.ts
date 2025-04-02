@@ -5,6 +5,7 @@ import { VacationSummaryComponent } from '../shared/vacation-summary/vacation-su
 import { SummaryComponent } from '../shared/summary/summary.component';
 import { InteractiveGridComponent } from '../shared/interactive-grid/interactive-grid.component';
 import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 export const routes: Routes = [
@@ -15,4 +16,5 @@ export const routes: Routes = [
   { path: 'Summary', component: SummaryComponent },
   { path: 'Search-filter', component: InteractiveGridComponent },
   { path: 'login', component: LoginComponent },
+   { path: 'register', component: RegisterComponent },
 ];

@@ -14,6 +14,7 @@ import { HourglassComponent} from './hourglass/hourglass.component';
 import { TimerComponent } from './timer/timer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { LoginComponent } from './auth/login/login.component'; 
+import { RegisterComponent } from './auth/register/register.component';
 import { routes } from './app.routes';
 
 
@@ -34,7 +35,8 @@ import { routes } from './app.routes';
     HourglassComponent,
     TimerComponent,
     ProgressBarComponent,
-    LoginComponent 
+    LoginComponent,
+    RegisterComponent
 
 
   ],
