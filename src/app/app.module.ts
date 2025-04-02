@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import { HourglassComponent} from './hourglass/hourglass.component';
 import { TimerComponent } from './timer/timer.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { LoginComponent } from './auth/login/login.component'; 
 import { routes } from './app.routes';
 
 
@@ -32,7 +33,9 @@ import { routes } from './app.routes';
     MainComponent,
     HourglassComponent,
     TimerComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    LoginComponent 
+
 
   ],
   providers: [],

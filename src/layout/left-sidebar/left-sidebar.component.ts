@@ -15,6 +15,11 @@ export class LeftSidebarComponent {
   changeIsLeftSidebarCollapsed = output<boolean>();
   items = [
     {
+      routeLink: 'login', 
+      icon: 'account_circle',
+      label: 'Login ',
+    },
+    {
       routeLink: 'dashboard',
       icon: 'dashboard',
       label: 'Dashboard',

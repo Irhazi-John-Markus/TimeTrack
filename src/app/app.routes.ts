@@ -4,6 +4,7 @@ import { LeaveTicketsComponent } from '../shared/leave-tickets/leave-tickets.com
 import { VacationSummaryComponent } from '../shared/vacation-summary/vacation-summary.component';
 import { SummaryComponent } from '../shared/summary/summary.component';
 import { InteractiveGridComponent } from '../shared/interactive-grid/interactive-grid.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 export const routes: Routes = [
@@ -13,4 +14,5 @@ export const routes: Routes = [
   { path: 'vacation', component: VacationSummaryComponent },
   { path: 'Summary', component: SummaryComponent },
   { path: 'Search-filter', component: InteractiveGridComponent },
+  { path: 'login', component: LoginComponent },
 ];
