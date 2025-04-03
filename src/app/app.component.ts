@@ -1,9 +1,9 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
 import { LeftSidebarComponent } from '../layout/left-sidebar/left-sidebar.component';
 import { MainComponent } from './main/main.component';
-import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
-import { TimerComponent } from "./timer/timer.component";
-import { HourglassComponent } from "./hourglass/hourglass.component";
+import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
+import { TimerComponent } from "./components/timer/timer.component";
+import { HourglassComponent } from "./components/hourglass/hourglass.component";
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from "../layout/footer/footer.component";

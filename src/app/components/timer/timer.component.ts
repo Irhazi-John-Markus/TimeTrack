@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TimerService } from '../timer/timer.service'
+import { TimerService } from './timer.service'
 import { HourglassComponent } from '../hourglass/hourglass.component';
 
 @Component({
