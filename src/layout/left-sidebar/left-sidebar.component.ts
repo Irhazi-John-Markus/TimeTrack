@@ -10,10 +10,12 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './left-sidebar.component.html',
   styleUrl: './left-sidebar.component.css',
 })
+
 export class LeftSidebarComponent {
   isLeftSidebarCollapsed = input.required<boolean>();
   changeIsLeftSidebarCollapsed = output<boolean>();
-  items = [
+  
+  items: SidebarItem[] = [
     {
       routeLink: 'login', 
       icon: 'account_circle',
@@ -55,3 +57,8 @@ export class LeftSidebarComponent {
     this.changeIsLeftSidebarCollapsed.emit(true);
   }
 }
+type SidebarItem = {
+  routeLink: string;
+  icon: string;
+  label: string;
+};
