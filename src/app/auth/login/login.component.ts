@@ -29,7 +29,9 @@ export class LoginComponent {
   loginData = signal<{ email: string; password: string } | null>(null); 
   
   router = inject(Router);
-
+  
+  loginError = signal<string | null>(null);
+  loginSuccess = signal<boolean>(false);
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
@@ -40,10 +42,24 @@ export class LoginComponent {
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      console.log('Login successful', this.loginForm.value);
       const { email, password } = this.loginForm.value;
-      this.loginData.set({ email, password }); 
+      this.loginData.set({ email, password });
       console.log(`Attempting login with email: ${email} and password: ${password}`);
+      
+      if (email === 'test@example.com' && password === 'password123') {
+        this.loginSuccess.set(true);
+        this.loginError.set(null);
+        console.log('Login successful');
+        setTimeout(() => this.router.navigate(['/dashboard']), 2000); 
+      } else {
+        this.loginSuccess.set(false);
+        this.loginError.set('Invalid email or password.');
+        console.error('Login failed');
+      }
+    } else {
+      this.loginSuccess.set(false);
+      this.loginError.set('Please fill in all required fields correctly.');
+      console.error('Form validation failed');
     }
   }
 

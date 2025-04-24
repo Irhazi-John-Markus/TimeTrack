@@ -1,13 +1,12 @@
 <div class="summary">
   <mat-tab-group>
-    <mat-tab label="Summary">
-      <app-current-situation />
-    </mat-tab>
-    <mat-tab label="Vacation">
-     <app-vacation-summary />
-    </mat-tab>
-    <mat-tab label="leave-tickets">
-      <app-leave-tickets />
+    <mat-tab *ngFor="let tab of tabs" [label]="tab.label" [disabled]="tab.disabled">
+      <ng-container [ngSwitch]="tab.component">
+        <app-current-situation *ngSwitchCase="'current-situation'" />
+        <app-vacation-summary *ngSwitchCase="'vacation-summary'" />
+        <app-leave-tickets *ngSwitchCase="'leave-tickets'" />
+        <div *ngSwitchDefault>Unknown Component</div>
+      </ng-container>
     </mat-tab>
   </mat-tab-group>
   <router-outlet />

@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Feature2Component } from './feature2.component';
-import { Feature2RoutingModule } from './feature2-routing.module';
+
+const routes: Routes = [
+  { path: ' feature2', component: Feature2Component }, 
+];
 
 @NgModule({
-  imports: [CommonModule, Feature2RoutingModule, Feature2Component],
+  imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class Feature2Module {}

@@ -47,6 +47,10 @@ export class VacationSummaryComponent implements OnInit {
   ];
 
   displayedColumns: string[] = ['startDate', 'endDate', 'reason', 'status', 'actions'];
+summaryItems: any;
+dateFields: any;
+formFields: any;
+tableColumns: any;
 
   constructor(private fb: FormBuilder) {
     this.vacationForm = this.fb.group({

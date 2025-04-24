@@ -26,6 +26,12 @@
           Login
         </button>
       </form>
+      <div *ngIf="loginSuccess" class="signal-form success">
+        Login successful! Redirecting...
+      </div>
+      <div *ngIf="loginError" class="signal-form error">
+        Login failed. Please try again.
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <a (click)="goToRegister()" class="register-link">Don't have an account? Register</a>
