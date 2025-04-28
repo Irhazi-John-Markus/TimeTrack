@@ -19,10 +19,6 @@
     </mat-form-field>
   </div>
 
-  <div class="progress-bar">
-    <div class="progress-bar-fill" [style.width.%]="progress"></div>
-  </div>
-
   <h3>Add Vacation Request</h3>
   <form [formGroup]="vacationForm" (ngSubmit)="submitRequest()">
     <mat-form-field appearance="fill">
@@ -41,10 +37,9 @@
       <mat-label>Reason</mat-label>
       <input matInput formControlName="reason">
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit" class="btn-submit">Submit Request</button>
+    <button type="submit" mat-raised-button color="primary">Add Vacation Request</button>
   </form>
 
-  <h3>Vacation Requests</h3>
   <table mat-table [dataSource]="vacationRequests" class="mat-elevation-z8">
     <ng-container matColumnDef="startDate">
       <th mat-header-cell *matHeaderCellDef> Start Date </th>

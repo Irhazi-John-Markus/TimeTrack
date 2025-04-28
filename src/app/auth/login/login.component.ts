@@ -35,8 +35,8 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      email: ['test@example.com', [Validators.required, Validators.email]],
+      password: ['password000', [Validators.required, Validators.minLength(6)]] 
     });
   }
 
@@ -45,17 +45,16 @@ export class LoginComponent {
       const { email, password } = this.loginForm.value;
       this.loginData.set({ email, password });
       console.log(`Attempting login with email: ${email} and password: ${password}`);
-      
-      if (email === 'test@example.com' && password === 'password123') {
-        this.loginSuccess.set(true);
-        this.loginError.set(null);
-        console.log('Login successful');
-        setTimeout(() => this.router.navigate(['/dashboard']), 2000); 
-      } else {
-        this.loginSuccess.set(false);
-        this.loginError.set('Invalid email or password.');
-        console.error('Login failed');
-      }
+
+      email === 'test@example.com' && password === 'password000'
+        ? (this.loginSuccess.set(true),
+           this.loginError.set(null),
+           console.log('Login successful'),
+           alert('Login successful!'), 
+           setTimeout(() => this.router.navigate(['/dashboard']), 2000))
+        : (this.loginSuccess.set(false),
+           this.loginError.set('Invalid email or password.'),
+           console.error('Login failed'));
     } else {
       this.loginSuccess.set(false);
       this.loginError.set('Please fill in all required fields correctly.');

@@ -44,8 +44,8 @@ interface LeaveTicket {
 export class LeaveTicketsComponent {
   leaveForm: FormGroup;
   leaveTickets: LeaveTicket[] = [
-    { id: 1, startDate: new Date('2023-03-01'), endDate: new Date('2023-03-01'), reason: 'Medical', type: 'Medical', startTime: '09:00', endTime: '11:00', status: 'approved' },
-    { id: 2, startDate: new Date('2023-04-10'), endDate: new Date('2023-04-10'), reason: 'Personal', type: 'Personal', startTime: '14:00', endTime: '16:00', status: 'pending' }
+    { id: 1, startDate: new Date('2025-03-01'), endDate: new Date('2025-03-01'), reason: 'Medical', type: 'Medical', startTime: '09:00', endTime: '11:00', status: 'approved' },
+    { id: 2, startDate: new Date('2025-04-10'), endDate: new Date('2025-04-10'), reason: 'Personal', type: 'Personal', startTime: '14:00', endTime: '16:00', status: 'pending' }
   ];
 
   displayedColumns: string[] = ['startDate', 'endDate', 'reason', 'type', 'startTime', 'endTime', 'status', 'actions'];
@@ -54,7 +54,7 @@ export class LeaveTicketsComponent {
     this.leaveForm = this.fb.group({
       startDate: [null, Validators.required],
       endDate: [null, Validators.required],
-      reason: ['', Validators.required],
+      reason: [' ', Validators.required],
       type: ['', Validators.required],
       startTime: ['', Validators.required],
       endTime: ['', Validators.required]

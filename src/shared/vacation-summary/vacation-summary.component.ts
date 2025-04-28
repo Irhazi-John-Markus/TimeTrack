@@ -31,7 +31,6 @@ interface VacationRequest {
     ReactiveFormsModule
   ]
 })
-
 export class VacationSummaryComponent implements OnInit {
   totalDays: number = 30;
   usedDays: number = 10;
@@ -42,15 +41,11 @@ export class VacationSummaryComponent implements OnInit {
 
   vacationForm: FormGroup;
   vacationRequests: VacationRequest[] = [
-    { id: 1, startDate: new Date('2023-01-01'), endDate: new Date('2023-01-05'), reason: 'Vacation', status: 'approved' },
-    { id: 2, startDate: new Date('2023-02-10'), endDate: new Date('2023-02-15'), reason: 'Family Event', status: 'pending' }
+    { id: 1, startDate: new Date('2025-01-01'), endDate: new Date('2025-01-05'), reason: 'Vacation', status: 'approved' },
+    { id: 2, startDate: new Date('2025-02-10'), endDate: new Date('2025-02-15'), reason: 'Family Event', status: 'pending' }
   ];
 
-  displayedColumns: string[] = ['startDate', 'endDate', 'reason', 'status', 'actions'];
-summaryItems: any;
-dateFields: any;
-formFields: any;
-tableColumns: any;
+  displayedColumns: string[] = ['startDate', 'endDate', 'reason', 'status', 'actions']; 
 
   constructor(private fb: FormBuilder) {
     this.vacationForm = this.fb.group({
@@ -59,8 +54,9 @@ tableColumns: any;
       reason: ['', Validators.required]
     });
   }
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
   }
 
   get progress(): number {
@@ -78,13 +74,23 @@ tableColumns: any;
 
   submitRequest() {
     if (this.vacationForm.valid) {
+      const startDate = this.vacationForm.value.startDate instanceof Date 
+        ? this.vacationForm.value.startDate 
+        : new Date(this.vacationForm.value.startDate);
+
+      const endDate = this.vacationForm.value.endDate instanceof Date 
+        ? this.vacationForm.value.endDate 
+        : new Date(this.vacationForm.value.endDate);
+
       const newRequest: VacationRequest = {
         id: this.vacationRequests.length + 1,
-        startDate: this.vacationForm.value.startDate,
-        endDate: this.vacationForm.value.endDate,
+        startDate: startDate,
+        endDate: endDate,
         reason: this.vacationForm.value.reason,
         status: 'pending'
       };
+
+      console.log('New Vacation Request:', newRequest); 
       this.vacationRequests.push(newRequest);
       this.vacationForm.reset();
     }

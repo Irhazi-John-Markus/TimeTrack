@@ -29,16 +29,14 @@ export class RegisterComponent {
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['test@example.com', [Validators.required, Validators.email]],
+      password: ['password000', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   onSubmit(): void {
-    if (this.registerForm.valid) {
-      console.log('Form Submitted', this.registerForm.value);
-    } else {
-      console.log('Form is invalid');
-    }
+    this.registerForm.valid 
+      ? console.log('Form Submitted', this.registerForm.value) 
+      : console.log('Form is invalid');
   }
 }
