@@ -1,20 +1,8 @@
-<div class="search-filter">
-  <mat-form-field appearance="fill">
-    <mat-label>Search</mat-label>
-    <input matInput [(ngModel)]="search" (input)="applyFilter(search)" placeholder="Search...">
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Date</mat-label>
-    <input matInput [matDatepicker]="picker" (dateChange)="applyDateFilter($event)">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Status</mat-label>
-    <mat-select [(value)]="status" (selectionChange)="applyStatusFilter($event)">
-      <mat-option value="all">All</mat-option>
-      <mat-option value="active">Active</mat-option>
-      <mat-option value="inactive">Inactive</mat-option>
-    </mat-select>
-  </mat-form-field>
+<div class="summary">
+ 
+  <div class="total-hours">
+    <i class="icon-clock"></i> 
+    <span>Total ore lucrate: {{ timerService.totalWorkedHours }}</span> 
+  </div>
 </div>
+

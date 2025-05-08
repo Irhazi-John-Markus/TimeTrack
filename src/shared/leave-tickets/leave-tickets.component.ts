@@ -47,8 +47,8 @@ export class LeaveTicketsComponent {
     { id: 1, startDate: new Date('2025-03-01'), endDate: new Date('2025-03-01'), reason: 'Medical', type: 'Medical', startTime: '09:00', endTime: '11:00', status: 'approved' },
     { id: 2, startDate: new Date('2025-04-10'), endDate: new Date('2025-04-10'), reason: 'Personal', type: 'Personal', startTime: '14:00', endTime: '16:00', status: 'pending' }
   ];
-
   displayedColumns: string[] = ['startDate', 'endDate', 'reason', 'type', 'startTime', 'endTime', 'status', 'actions'];
+  isFormVisible: boolean = false; 
 
   constructor(private fb: FormBuilder) {
     this.leaveForm = this.fb.group({
@@ -59,6 +59,10 @@ export class LeaveTicketsComponent {
       startTime: ['', Validators.required],
       endTime: ['', Validators.required]
     });
+  }
+
+  toggleFormVisibility() {
+    this.isFormVisible = !this.isFormVisible; 
   }
 
   submitRequest() {
@@ -75,6 +79,7 @@ export class LeaveTicketsComponent {
       };
       this.leaveTickets.push(newTicket);
       this.leaveForm.reset();
+      this.isFormVisible = false; 
     }
   }
 

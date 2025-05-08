@@ -1,14 +1,14 @@
 :root {
-  --primary-color: #0c99be;
-  --accent-color: #ff4081;
-  --background-color:#0c99be;
-  --text-color: #000000;
+  --primary-color: #edecec;
+  --accent-color: #ff4281;
+  --background-color:#bab8b6;
+  --text-color: #1e1f20;
 }
 
 .dark-theme {
-  --primary-color: #044089;
+  --primary-color: #fff;
   --accent-color: #ff4081;
-  --background-color: #044089;
+  --background-color: #1e1f20;
   --text-color: #ffffff;
 }
 

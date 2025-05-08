@@ -12,10 +12,10 @@ export interface UserData {
   id: string;
   name: string;
   progress: string;
-  color: string;
+  roles: string;
 }
 
-const COLORS: string[] = ['red', 'orange', 'green', 'blue', 'magenta'];
+const ROLES: string[] = ['Manager', 'Developer', 'Designer', 'HR', 'Analyst'];
 const NAMES: string[] = ['Maia', 'Alex', 'Olivia', 'George','John'];
 
 @Component({
@@ -31,7 +31,7 @@ const NAMES: string[] = ['Maia', 'Alex', 'Olivia', 'George','John'];
   ]
 })
 export class InteractiveGridComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
+  displayedColumns: string[] = ['id', 'name', 'progress', 'roles'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator | null = null;
@@ -65,6 +65,6 @@ function createNewUser(id: number): UserData {
     id: id.toString(),
     name: name,
     progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
+    roles: ROLES[Math.round(Math.random() * (ROLES.length - 1))]
   };
 }

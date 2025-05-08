@@ -34,6 +34,26 @@ export class SearchFilterComponent {
   search: string = '';
   date: Date | null = null;
   status: string = 'all';
+  totalWorkedHours: number = 0; 
+timerService: any;
+
+  constructor() {
+    this.calculateTotalWorkedHours(); 
+  }
+
+  calculateTotalWorkedHours() {
+  
+    const summaryData = [
+      { date: '2025-01-01', hoursWorked: 8 },
+      { date: '2025-01-02', hoursWorked: 7.5 },
+      { date: '2025-01-03', hoursWorked: 8 },
+      { date: '2025-01-04', hoursWorked: 8.5 },
+      { date: '2025-01-05', hoursWorked: 8 }
+    ];
+
+    this.totalWorkedHours = summaryData.reduce((total, entry) => total + entry.hoursWorked, 0);
+    this.totalWorkedHours = 40; 
+  }
 
   applyFilter(search: string) {
     this.search = search;

@@ -1,5 +1,4 @@
 .sidenav {
-    background: #012a5b;
     transition: all 0.5s ease;
     position: fixed;
     z-index: 1;
@@ -67,7 +66,6 @@
     display: flex;
     align-items: center;
     height: 3rem;
-    color: #f3f3f3;
     text-decoration: none;
     border-radius: 0.625rem;
     transition: all 0.3s ease;
@@ -82,16 +80,27 @@
   }
   .sidenav-nav .sidenav-nav-item .sidenav-nav-link .sidenav-link-text {
     margin-left: 1rem;
+    color: var(--text-color); 
   }
   .sidenav-nav .sidenav-nav-item:hover .sidenav-nav-link {
-    background-color: #fff;
+    background-color: #c2bfbf;
     color: #000;
   }
   
   .active {
-    background-color: #fff;
+    background-color: #dfdede;
   }
   .active .sidenav-link-icon,
   .active .sidenav-link-text {
     color: #000;
   }
+
+  /* Light theme */
+:root {
+  --text-color: #000; 
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --text-color: #fff; 
+}

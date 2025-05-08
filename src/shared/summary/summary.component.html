@@ -1,13 +1,24 @@
 <div class="summary">
-  <mat-tab-group>
-    <mat-tab *ngFor="let tab of tabs" [label]="tab.label" [disabled]="tab.disabled">
-      <ng-container [ngSwitch]="tab.component">
-        <app-current-situation *ngSwitchCase="'current-situation'" />
-        <app-vacation-summary *ngSwitchCase="'vacation-summary'" />
-        <app-leave-tickets *ngSwitchCase="'leave-tickets'" />
-        <div *ngSwitchDefault>Unknown Component</div>
-      </ng-container>
-    </mat-tab>
-  </mat-tab-group>
-  <router-outlet />
+  <div class="filters">
+    <div class="filter-item">
+      <label for="startDate">Date start</label>
+      <input id="startDate" type="date" />
+    </div>
+    <div class="filter-item">
+      <label for="endDate">Date finish</label>
+      <input id="endDate" type="date" />
+    </div>
+    <button class="search-button">Search</button>
+  </div>
+
+  <div class="main-content">
+    <h2>Summary Overview</h2>
+    <mat-tab-group>
+      <mat-tab *ngFor="let tab of tabs" [label]="tab.label" [disabled]="tab.disabled">
+        <ng-container [ngSwitch]="tab.component">
+          <app-current-situation *ngSwitchCase="'current-situation'" />
+        </ng-container>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
