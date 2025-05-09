@@ -2,23 +2,61 @@
   <div class="filters">
     <div class="filter-item">
       <label for="startDate">Date start</label>
-      <input id="startDate" type="date" />
+      <input id="startDate" type="date" [(ngModel)]="filter.startDate" />
     </div>
     <div class="filter-item">
       <label for="endDate">Date finish</label>
-      <input id="endDate" type="date" />
+      <input id="endDate" type="date" [(ngModel)]="filter.endDate" />
     </div>
-    <button class="search-button">Search</button>
+    <button class="search-button" (click)="applyFilter(filter)">Search</button>
   </div>
 
   <div class="main-content">
     <h2>Summary Overview</h2>
+    <div class="current-situation">
+      <div class="create-filter">
+        <button class="create-button" (click)="createNewFilter()">+ New Entry</button>
+      </div>
+      <div class="table-container">
+        <div class="scrollable-table">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Date</th>
+                <th>Entry</th>
+                <th>Exit</th>
+                <th>Duration</th>
+                <th>Hours Worked</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let result of filteredResults; let i = index">
+                <td><button (click)="edit(result)">Edit</button></td>
+                <td>{{ result.date }}</td>
+                <td>{{ result.entry }}</td>
+                <td>{{ result.exit || 'N/A' }}</td>
+                <td>{{ result.duration || 'N/A' }}</td>
+                <td>{{ result.workedHours || 'N/A' }}</td>
+                <td><button class="delete-button" (click)="deleteEntry(i)">Delete</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
     <mat-tab-group>
       <mat-tab *ngFor="let tab of tabs" [label]="tab.label" [disabled]="tab.disabled">
         <ng-container [ngSwitch]="tab.component">
-          <app-current-situation *ngSwitchCase="'current-situation'" />
+          <app-current-situation *ngSwitchCase="'current-situation'"></app-current-situation>
+          <app-current-situation *ngSwitchDefault></app-current-situation>
         </ng-container>
       </mat-tab>
     </mat-tab-group>
+    <div class="total-hours">
+      <i class="icon-clock"></i>
+      <span>Total Hours Worked: {{ totalWorkedHours }}</span>
+    </div>
   </div>
 </div>

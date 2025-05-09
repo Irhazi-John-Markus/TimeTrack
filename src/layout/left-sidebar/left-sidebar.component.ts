@@ -34,7 +34,7 @@ export class LeftSidebarComponent {
     {
       routeLink: 'vacation',
       icon: 'beach_access',
-      label: 'Calendar',
+      label: 'Vacation',
     },
     {
       routeLink: 'Summary',

@@ -4,18 +4,19 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(135deg, #f0f9ff, #cfefff);
 }
 
 .vacation-summary h2, .vacation-summary h3 {
   margin-top: 0;
-  color: #ffffff; 
+  color: #0056b3; 
   font-size: 1.8rem;
   font-weight: 600;
 }
 
 .vacation-summary p {
   margin: 0.5rem 0;
-  color: #ffffff; 
+  color: #0056b3; 
   font-size: 1.2rem;
 }
 
@@ -96,6 +97,9 @@ button {
     width: 100%;
     margin-top: 1.5rem;
     border-collapse: collapse;
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    overflow: hidden; 
   }
 
   th, td {
@@ -103,16 +107,42 @@ button {
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
-  
+
   th {
-    background-color: #f5f5f5;
+    background: #007bff;
+    color: #0056b3;
     font-weight: bold;
+    text-transform: uppercase; 
   }
   
-  tr:hover {
-    background-color: #f1f1f1;
+  td {
+    background-color: #f9f9f9;
+    color: #333;
   }
-  
+
+  tr:nth-child(even) td {
+    background-color: #f1f1f1; 
+  }
+
+  tr:hover td {
+    background-color: #e6f7ff; 
+  }
+  .table-container {
+    max-height: 400px; 
+    overflow-y: auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+
   .mat-button {
     min-width: 36px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .mat-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+    transform: scale(1.05);
   }
