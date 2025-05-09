@@ -1,6 +1,7 @@
 .interactive-grid {
   width: 100%;
   margin: 20px 0;
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
 }
 
 mat-form-field {
@@ -9,12 +10,30 @@ mat-form-field {
 
 table {
   width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  overflow: hidden;
 }
 
 th.mat-header-cell {
-  text-align: left;
+  text-align: left; 
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #0056b3;
+  font-weight: bold;
+  text-transform: uppercase; 
 }
 
 td.mat-cell {
   text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f1f1; 
+}
+
+tr:hover td {
+  background-color: #e6f7ff; 
 }

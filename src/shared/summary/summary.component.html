@@ -15,7 +15,9 @@
     <h2>Summary Overview</h2>
     <div class="current-situation">
       <div class="create-filter">
-        <button class="create-button" (click)="createNewFilter()">+ New Entry</button>
+        <button class="create-button" (click)="createNewFilter()">
+          <i class="icon-plus"></i> + New Entry
+        </button>
       </div>
       <div class="table-container">
         <div class="scrollable-table">
@@ -55,7 +57,7 @@
       </mat-tab>
     </mat-tab-group>
     <div class="total-hours">
-      <i class="icon-clock"></i>
+      <mat-icon>work</mat-icon>
       <span>Total Hours Worked: {{ totalWorkedHours }}</span>
     </div>
   </div>

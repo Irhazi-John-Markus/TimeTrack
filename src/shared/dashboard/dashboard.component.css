@@ -4,18 +4,18 @@
     align-items: center;
     padding: 2rem;
     border: 5px solid #0c99be;
+    color:#000000;
+    background: linear-gradient(135deg, #f0f9ff, #cfefff);
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   }
   
-  :root {
-    --theme-background: #bab8b6; /* Light theme background */
-}
-
-[data-theme="dark"] {
-    --theme-background: #1e1e1e; /* Dark theme background */
-}
+.dashboard:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  }
 
   .timer {
     display: flex;

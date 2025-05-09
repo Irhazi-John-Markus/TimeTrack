@@ -23,8 +23,8 @@ export class LeftSidebarComponent {
     },
     {
       routeLink: 'dashboard',
-      icon: 'dashboard',
-      label: 'Dashboard',
+      icon: 'house',
+      label: 'Home',
     },
     {
       routeLink: 'leave-tickets',
