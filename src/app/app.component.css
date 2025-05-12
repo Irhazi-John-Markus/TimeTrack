@@ -74,13 +74,13 @@
     transform: scale(1.05);
   }
   
-  app-work-summary {
+  app-hourglass {
     margin-left: 2rem;
     width: 300px;
     transition: transform 0.3s ease;
   }
   
-  app-work-summary:hover {
+  app-hourglass:hover {
     transform: scale(1.05);
   }
   
@@ -92,7 +92,7 @@
     }
     
     app-progress-bar,
-    app-work-summary {
+    app-hourglass {
       margin: 1rem 0;
       width: 100%;
       max-width: 300px;

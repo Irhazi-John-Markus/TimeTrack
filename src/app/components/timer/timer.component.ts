@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { TimerService } from './timer.service';
 import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
-import { WorkSummaryComponent } from "../work-summary/work-summary.component";
+import { HourglassComponent } from "../hourglass/hourglass.component";
 
 @Component({
   selector: 'app-timer',
@@ -12,7 +12,7 @@ import { WorkSummaryComponent } from "../work-summary/work-summary.component";
   imports: [
     MatIcon,
     CommonModule,
-    WorkSummaryComponent,
+    HourglassComponent
 ],
 })
 export class TimerComponent implements OnInit {
@@ -25,6 +25,8 @@ export class TimerComponent implements OnInit {
   @Output() timerStarted = new EventEmitter<void>();
   @Output() timerStopped = new EventEmitter<void>();
   @Output() progressChange = new EventEmitter<number>();
+breakTime: any;
+workTime: any;
 
   constructor(private snackBar: MatSnackBar, private timerService: TimerService) {}
 
@@ -86,6 +88,17 @@ export class TimerComponent implements OnInit {
     const seconds = totalSeconds % 60;
 
     return `${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  getRemainingTime(): string {
+    const totalSeconds = this.duration * 60 - Math.floor(this.elapsedTime / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    return `${hours.toString().padStart(2, '0')}h ${minutes
+      .toString()
+      .padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
   }
 }
 

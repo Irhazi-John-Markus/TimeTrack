@@ -3,10 +3,11 @@ import { LeftSidebarComponent } from '../layout/left-sidebar/left-sidebar.compon
 import { MainComponent } from './main/main.component';
 import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
 import { TimerComponent } from "./components/timer/timer.component";
-import { WorkSummaryComponent } from './components/work-summary/work-summary.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from "../layout/footer/footer.component";
+import { HourglassComponent } from "./components/hourglass/hourglass.component";
+
 
 
 @Component({
@@ -17,15 +18,16 @@ import { FooterComponent } from "../layout/footer/footer.component";
     MainComponent,
     ProgressBarComponent,
     TimerComponent,
-    WorkSummaryComponent,
     MatIconModule,
     MatButtonModule,
-    FooterComponent
+    FooterComponent,
+    HourglassComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
+
   isLeftSidebarCollapsed = signal<boolean>(false);
   screenWidth = signal<number>(window.innerWidth);
   title = 'TimeTrack';
