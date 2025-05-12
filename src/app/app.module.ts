@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { LeftSidebarComponent } from '../layout/left-sidebar/left-sidebar.component';
 import { FooterComponent } from '../layout/footer/footer.component';
 import { MainComponent } from './main/main.component';
-import { HourglassComponent} from './components/hourglass/hourglass.component';
+import { WorkSummaryComponent } from './components/work-summary/work-summary.component';
 import { TimerComponent } from './components/timer/timer.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { LoginComponent } from './auth/login/login.component'; 
@@ -35,7 +35,7 @@ import { routes } from './app.routes';
     LeftSidebarComponent,
     FooterComponent,
     MainComponent,
-    HourglassComponent,
+    WorkSummaryComponent,
     TimerComponent,
     ProgressBarComponent,
     LoginComponent,

@@ -3,7 +3,7 @@ import { LeftSidebarComponent } from '../layout/left-sidebar/left-sidebar.compon
 import { MainComponent } from './main/main.component';
 import { ProgressBarComponent } from "./components/progress-bar/progress-bar.component";
 import { TimerComponent } from "./components/timer/timer.component";
-import { HourglassComponent } from "./components/hourglass/hourglass.component";
+import { WorkSummaryComponent } from './components/work-summary/work-summary.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from "../layout/footer/footer.component";
@@ -17,7 +17,7 @@ import { FooterComponent } from "../layout/footer/footer.component";
     MainComponent,
     ProgressBarComponent,
     TimerComponent,
-    HourglassComponent,
+    WorkSummaryComponent,
     MatIconModule,
     MatButtonModule,
     FooterComponent
@@ -30,6 +30,7 @@ export class AppComponent implements OnInit {
   screenWidth = signal<number>(window.innerWidth);
   title = 'TimeTrack';
   isDarkTheme = localStorage.getItem('theme') === 'dark';
+timer: any;
 
   constructor() {
     this.applyTheme();

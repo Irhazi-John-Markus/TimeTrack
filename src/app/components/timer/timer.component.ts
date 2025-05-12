@@ -1,17 +1,19 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { TimerService } from './timer.service'
-import { HourglassComponent } from '../hourglass/hourglass.component';
+import { TimerService } from './timer.service';
+import { CommonModule } from '@angular/common';
 import { MatIcon } from '@angular/material/icon';
+import { WorkSummaryComponent } from "../work-summary/work-summary.component";
 
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css'],
   imports: [
-    HourglassComponent,
-    MatIcon
-  ],
+    MatIcon,
+    CommonModule,
+    WorkSummaryComponent,
+],
 })
 export class TimerComponent implements OnInit {
   startTime: number | null = null;
