@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 interface LeaveTicket {
   id: number;
@@ -37,11 +38,13 @@ interface LeaveTicket {
     MatTableModule,
     MatButtonModule,
     MatSelectModule,
-    MatOptionModule
+    MatOptionModule,
+    MatIconModule
   ]
 })
 
 export class LeaveTicketsComponent {
+  @ViewChild('ticketsContainer') ticketsContainer!: ElementRef; 
   leaveForm: FormGroup;
   leaveTickets: LeaveTicket[] = [
     { id: 1, startDate: new Date('2025-03-01'), endDate: new Date('2025-03-01'), reason: 'Medical', type: 'Medical', startTime: '09:00', endTime: '11:00', status: 'approved' },
@@ -49,7 +52,7 @@ export class LeaveTicketsComponent {
   ];
   displayedColumns: string[] = ['startDate', 'endDate', 'reason', 'type', 'startTime', 'endTime', 'status', 'actions'];
   isFormVisible: boolean = false; 
-
+  areTicketsVisible: boolean = true; 
   constructor(private fb: FormBuilder) {
     this.leaveForm = this.fb.group({
       startDate: [null, Validators.required],
@@ -65,6 +68,10 @@ export class LeaveTicketsComponent {
     this.isFormVisible = !this.isFormVisible; 
   }
 
+  toggleTicketsVisibility(): void {
+    this.areTicketsVisible = !this.areTicketsVisible;
+  }
+
   submitRequest() {
     if (this.leaveForm.valid) {
       const newTicket: LeaveTicket = {
@@ -75,11 +82,18 @@ export class LeaveTicketsComponent {
         type: this.leaveForm.value.type,
         startTime: this.leaveForm.value.startTime,
         endTime: this.leaveForm.value.endTime,
-        status: 'pending'
+        status: 'pending',
       };
       this.leaveTickets.push(newTicket);
       this.leaveForm.reset();
-      this.isFormVisible = false; 
+      this.isFormVisible = false;
+
+      
+      setTimeout(() => {
+        if (this.ticketsContainer) {
+          this.ticketsContainer.nativeElement.scrollTop = this.ticketsContainer.nativeElement.scrollHeight;
+        }
+      }, 0);
     }
   }
 

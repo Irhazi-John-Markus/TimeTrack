@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule} from '@angular/forms';
+
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -39,7 +43,12 @@ import { routes } from './app.routes';
     TimerComponent,
     ProgressBarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MatToolbarModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatInputModule,
 
 
   ],

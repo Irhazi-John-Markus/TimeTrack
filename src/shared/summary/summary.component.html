@@ -8,14 +8,14 @@
       <label for="endDate">Date finish</label>
       <input id="endDate" type="date" [(ngModel)]="filter.endDate" />
     </div>
-    <button class="search-button" (click)="applyFilter(filter)">Search</button>
+    <button class="search-button" (click)="applyFilter()">Search</button>
   </div>
 
   <div class="main-content">
     <h2>Summary Overview</h2>
     <div class="current-situation">
       <div class="create-filter">
-        <button class="create-button" (click)="createNewFilter()">
+        <button class="create-button" (click)="createNewEntry()">
           <i class="icon-plus"></i> + New Entry
         </button>
       </div>
@@ -35,7 +35,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let result of filteredResults; let i = index">
-                <td><button (click)="edit(result)">Edit</button></td>
+                <td><button (click)="editEntry(result)">Edit</button></td>
                 <td>{{ result.date }}</td>
                 <td>{{ result.entry }}</td>
                 <td>{{ result.exit || 'N/A' }}</td>
@@ -48,14 +48,6 @@
         </div>
       </div>
     </div>
-    <mat-tab-group>
-      <mat-tab *ngFor="let tab of tabs" [label]="tab.label" [disabled]="tab.disabled">
-        <ng-container [ngSwitch]="tab.component">
-          <app-current-situation *ngSwitchCase="'current-situation'"></app-current-situation>
-          <app-current-situation *ngSwitchDefault></app-current-situation>
-        </ng-container>
-      </mat-tab>
-    </mat-tab-group>
     <div class="total-hours">
       <mat-icon>work</mat-icon>
       <span>Total Hours Worked: {{ totalWorkedHours }}</span>
