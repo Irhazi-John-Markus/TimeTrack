@@ -10,6 +10,7 @@ import { HourglassComponent } from "./components/hourglass/hourglass.component";
 
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

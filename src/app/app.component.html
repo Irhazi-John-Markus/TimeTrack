@@ -1,3 +1,4 @@
+
 <app-left-sidebar
   [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
   (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)"
@@ -19,8 +20,8 @@
     <mat-icon>{{ isDarkTheme ? 'brightness_7' : 'brightness_4' }}</mat-icon>
     <span>{{ isDarkTheme ? 'Light Theme' : 'Dark Theme' }}</span>
   </button>
-<div>
-  
+</div>
+
 <div class="content">
   <div class="time-tracker">
     <app-progress-bar [progress]="timer.progress"></app-progress-bar>
@@ -32,3 +33,4 @@
       <app-hourglass #hourglass [duration]="60" [isRunning]="timer.isRunning"></app-hourglass>
     </div>
     <div> 
+</div>
